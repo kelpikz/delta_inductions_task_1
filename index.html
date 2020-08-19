@@ -13,6 +13,35 @@
 
   <button id="makeBold" onclick="changeEditor( 'makeBold','bold')">Bold</button>
   <button id="makeItalic" onclick="changeEditor( 'makeItalic','italic')">Italic</button>
+
+  <select onchange="changeEditor('z','fontname',this[this.selectedIndex].value)">
+    <option selected disabled>Select a font</option>
+    <option>Arial</option>
+    <option>Arial Black</option>
+    <option>Courier New</option>
+    <option>Times New Roman</option>
+  </select>
+
+  <select onchange="changeEditor('z','backcolor',this[this.selectedIndex].value)">
+    <option selected disabled>background color</option>
+    <option>White</option>
+    <option>Pink</option>
+    <option>Yellow</option>
+    <option>Black</option>
+  </select>
+
+  <select onchange="changeEditor('z','forecolor',this[this.selectedIndex].value)">
+    <option selected disabled>font color</option>
+    <option>White</option>
+    <option>Black</option>
+    <option>Red</option>
+    <option>Blue</option>
+  </select>
+
+  <button class="danger" onclick="changeEditor( 'x','undo')">Undo</button>
+  <button class="good" onclick="changeEditor( 'x','redo')">Redo</button>
+  <button class="danger" onclick="clearText()">Clear</button>
+
   <div id="myeditor">
     Insert Your Text here
   </div>

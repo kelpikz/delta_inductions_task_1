@@ -1,12 +1,18 @@
 let editorDocument = document.getElementById("myeditor");
 
-const changeEditor = (itemName, type) => {
+const changeEditor = (itemName, type, value) => {
   let item = document.getElementById(itemName);
-  item.classList.contains("active")
-    ? item.classList.remove("active")
-    : item.classList.add("active");
+  if (item)
+    item.classList.contains("active")
+      ? item.classList.remove("active")
+      : item.classList.add("active");
 
-  document.execCommand(type, false);
+  document.execCommand(type, false, value);
+  editorDocument.focus();
+};
+
+const clearText = () => {
+  editorDocument.innerHTML = "";
   editorDocument.focus();
 };
 
